@@ -1,16 +1,14 @@
 /**
- * A generic stack implementation.
- *
- * @param T the type of elements stored in the stack
+ * Clase que implementa una pila genérica.
+ * @param T el tipo de elementos contenidos en la pila.
  */
 class Stack<T>{
 
     private val elements = mutableListOf<T>()
 
     /**
-     * Returns the top element of the stack without removing it.
-     *
-     * @return the top element of the stack, or `null` if the stack is empty
+     * Devuelve el elemento en la cima de la pila sin eliminarlo.
+     * @return El elemento en la cima de la pila, o null si la pila está vacía.
      */
     fun top(): T?{
         return if (!isEmpty()){
@@ -21,18 +19,16 @@ class Stack<T>{
     }
 
     /**
-     * Pushes an element onto the stack.
-     *
-     * @param element the element to push onto the stack
+     * Agrega un elemento a la cima de la pila.
+     * @param element El elemento a agregar.
      */
     fun push(element: T){
         elements.add(element)
     }
 
     /**
-     * Removes and returns the top element of the stack.
-     *
-     * @return the top element of the stack, or `null` if the stack is empty
+     * Elimina y devuelve el elemento en la cima de la pila.
+     * @return El elemento en la cima de la pila, o null si la pila está vacía.
      */
     fun pop(): T?{
         return if(!isEmpty()){
@@ -43,9 +39,8 @@ class Stack<T>{
     }
 
     /**
-     * Checks if the stack is empty.
-     *
-     * @return `true` if the stack is empty, `false` otherwise
+     * Verifica si la pila está vacía.
+     * @return true si la pila está vacía, false de lo contrario.
      */
     fun isEmpty(): Boolean {
         return elements.isEmpty()
@@ -55,10 +50,9 @@ class Stack<T>{
 }
 
 /**
- * Reverses the given list using a stack.
- *
- * @param list the list to be reversed
- * @return a new list containing the elements of the original list in reverse order
+ * Función para invertir una lista utilizando una pila.
+ * @param list La lista a invertir.
+ * @return Una lista con los elementos invertidos.
  */
 fun <T> reverse(list: List<T>): MutableList<T> {
     val stack = Stack<T>()
